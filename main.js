@@ -1,5 +1,4 @@
-//arrow functions in javascript?
-//functions in javascript?
+
 
 //change navbar styles on scroll
 window.addEventListener('scroll', ()=>{
@@ -17,13 +16,14 @@ faqs.forEach(faq =>{
     faq.addEventListener('click',()=>{
         faq.classList.toggle('open');
 
- /*//   change icon
+//   change icon
 const icon = faq.querySelector('.faq_icon i ');
-if(icon.className === 'uil iul-plus'){
-    icon.className = "uil uil-minus"
+
+if(icon.className === 'fas fa-plus'){
+    icon.className = "fas fa-minus";
 }   else{
-    icon.className = "uil uil-plus"
-}*/
+    icon.className = "fas fa-plus";
+}
 
 })
     
@@ -39,16 +39,39 @@ const menuBtn = document.querySelector("#open-menu-btn");
 const closeBtn = document.querySelector("#close-menu-btn");
 
 menuBtn.addEventListener('click',()=>{
-    menu.getElementsByClassName.display = "flex";
-    closeBtn.getElementsByClassName.display ="inline-block";
-    menuBtn.getElementsByClassName.display = "none";
+    menu.style.display = "flex";
+    closeBtn.style.display ="inline-block";
+    menuBtn.style.display = "none";
 })
 
 //close nav menu
 
 const closeNav = ()=>{
-    menu.getElementsByClassName.display ="none";
-    closeBtn.getElementsByClassName.display = "none";
-    menuBtn.getElementsByClassName.display= "inline-block";
+    menu.style.display ="none";
+    closeBtn.style.display = "none";
+    menuBtn.style.display= "inline-block";
 }
 closeBtn.addEventListener('click',closeNav);
+
+
+//REVEAL ITEMS ON SCROLL
+window.addEventListener('scroll', reveal);
+
+function reveal(){
+    var reveals = document.querySelectorAll('.reveal');
+ 
+    for(var i=0; i<reveals.length;i++){
+
+        var windowheight = window.innerHeight;
+        var revealtop = reveals[i].getBoundingClientRect().top;
+        var revealpoint = 150;
+
+        if(revealtop < windowheight - revealpoint){
+            reveals[i].classList.add('.active');
+        }else{
+            reveals[i].classList.remove('.active');
+        }
+    }
+
+
+}
