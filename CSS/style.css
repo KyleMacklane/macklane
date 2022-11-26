@@ -35,6 +35,7 @@ font-family: "poppins",sans-serif;
 line-height: 1.7;
 color:var(--color-white);
 background: var(--color-bg);
+max-width:100vh;
 }
 .container{
 width: var(--container-width-lg);
